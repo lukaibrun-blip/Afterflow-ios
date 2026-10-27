@@ -1,0 +1,33 @@
+name: Build Afterflow for iOS
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-ios:
+    name: Build iOS mod
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Build with Geode
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: given
+          target: iOS
+
+      - name: Upload iOS .geode
+        uses: actions/upload-artifact@v7
+        with:
+          name: afterflow-ios
+          path: ${{ steps.build.outputs.build-output }}/*.geode
+          if-no-files-found: error
+          retention-days: 14
