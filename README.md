@@ -100,7 +100,21 @@ the packaged mod ends up in `build-win/` when cross compiling from linux (`build
 
 ## installation
 
-copy the resulting .geode file into geometry dash's geode/mods folder and restart the game. enable **afterflow** in the geode mod list. the defaults work out of the box so you can rebind the two keys in mod settings if you want different ones
+### ios (geode launcher)
+
+1. install and set up [geode for ios](https://github.com/geode-sdk/ios-launcher/blob/main/MODERN-IOS-INSTALL.md) first.
+2. open the [ios build workflow](https://github.com/lukaibrun-blip/Afterflow-ios/actions/workflows/build-ios.yml), select a successful `Build Afterflow for iOS` run, and download the `afterflow-ios` artifact.
+3. extract the artifact zip to get the `.geode` file.
+4. on your iphone, save the `.geode` file to Files. tap it or use Share > Open in Geode to import it; the Geode launcher copies it into its mods folder.
+5. launch Geometry Dash from the Geode launcher. tap the Geode button on the main menu, find **Afterflow** in the mod list, and enable it. open Afterflow's mod settings to choose the iOS prediction stage.
+
+> local `.geode` importing is not supported in Enterprise Mode by the current Geode iOS launcher. if Geode does not appear as an import option, check the [iOS installation guide](https://github.com/geode-sdk/ios-launcher/blob/main/MODERN-IOS-INSTALL.md) and use a supported setup.
+>
+> this artifact is for iOS only.
+
+### desktop builds
+
+copy the resulting `.geode` file into geometry dash's `geode/mods` folder and restart the game. enable **afterflow** in the geode mod list. the defaults work out of the box so you can rebind the two keys in mod settings if you want different ones
 
 ## credits
 
