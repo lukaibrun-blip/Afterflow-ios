@@ -3308,6 +3308,7 @@ class $modify(BufPlayLayer, PlayLayer) {
     }
 };
 
+#if !defined(GEODE_IS_IOS)
 class $modify(BufMenuLayer, MenuLayer) {
     bool init() {
         if (!MenuLayer::init()) {
@@ -3326,6 +3327,7 @@ class $modify(BufMenuLayer, MenuLayer) {
         return true;
     }
 };
+#endif
 
 class $modify(BufEditorLayer, LevelEditorLayer) {
     bool init(GJGameLevel* gameLevel, bool withoutUI) {
